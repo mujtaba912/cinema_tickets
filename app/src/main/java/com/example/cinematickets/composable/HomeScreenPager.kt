@@ -45,12 +45,12 @@ fun HomeScreenPager(
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight(fraction = 0.55f),
-        contentPadding = PaddingValues(horizontal = 50.dp),
+        contentPadding = PaddingValues(horizontal = 70.dp),
         state = pagerState,
 
         ) {
         val animatedScale by animateFloatAsState(
-            targetValue = if (it == pagerState.currentPage) 1f else 0.8f,
+            targetValue = if (it == pagerState.currentPage) 1f else 0.9f,
             animationSpec = tween(durationMillis = 200)
         )
         Box(
@@ -61,10 +61,10 @@ fun HomeScreenPager(
                 contentDescription = null,
                 contentScale = ContentScale.FillBounds,
                 modifier = Modifier
-                    .fillMaxWidth(fraction = 0.9f)
+                    .fillMaxWidth()
                     .fillMaxHeight()
-                    .clip(RoundedCornerShape(32.dp))
                     .scale(animatedScale)
+                    .clip(RoundedCornerShape(32.dp))
                     .clickable() { onClickImage() }
             )
         }

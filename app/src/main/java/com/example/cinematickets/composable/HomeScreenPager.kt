@@ -53,9 +53,7 @@ fun HomeScreenPager(
             targetValue = if (it == pagerState.currentPage) 1f else 0.9f,
             animationSpec = tween(durationMillis = 200)
         )
-        Box(
-            modifier = Modifier.padding(horizontal = 16.dp)
-        ) {
+        Box() {
             Image(
                 painter = painterResource(id = imagesList[it]),
                 contentDescription = null,
